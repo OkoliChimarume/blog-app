@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router";
 import { Flex, Box, Heading, Button } from "@chakra-ui/react";
-import { AddPosts } from "../../pages/AddPost";
+// import { AddPosts } from "../../pages/AddPost";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const ref = useRef < HTMLInputElement > null;
+  // const ref = useRef < HTMLInputElement > null;
   const isActive = (path) => location.pathname === path;
   const isMobile = window.innerWidth <= 768;
 
@@ -47,13 +47,13 @@ const Navbar = () => {
         >
           Posts
         </Button>
-        {/* <Button p={isMobile ? 2 : 4}>Add Post</Button> */}
-        <Dialog.Root initialFocusEl={() => ref.current}>
+        <Button p={isMobile ? 2 : 4}>Add Post</Button>
+        {/* <Dialog.Root initialFocusEl={() => ref.current}>
           <Dialog.Trigger asChild>
             <Button p={isMobile ? 2 : 4}>Add Post</Button>
           </Dialog.Trigger>
           <AddPosts ref={ref} />
-        </Dialog.Root>
+        </Dialog.Root> */}
       </Box>
     </Flex>
   );
