@@ -1,43 +1,59 @@
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router';
-import { Flex, Box, Heading, Button } from '@chakra-ui/react';
+import React from "react";
+import { useNavigate, useLocation } from "react-router";
+import { Flex, Box, Heading, Button } from "@chakra-ui/react";
+import { AddPosts } from "../../pages/AddPost";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const ref = useRef < HTMLInputElement > null;
   const isActive = (path) => location.pathname === path;
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <Flex
       as="nav"
-      bg="blue.600"
+      bg="white"
       p={4}
-      color="white"
+      px={isMobile ? 4 : 10}
+      color="black"
       justify="space-between"
       align="center"
       boxShadow="md"
     >
-      <Heading size="md" cursor="pointer" onClick={() => navigate('/')}>
-        My Blog
+      <Heading
+        size={isMobile ? "xl" : "2xl"}
+        cursor="pointer"
+        onClick={() => navigate("/")}
+      >
+        My <span style={{ color: "#c8b19f" }}>Blog</span>
       </Heading>
 
-      <Box>
+      <Box gap={isMobile ? 1 : 4} display="flex" alignItems="center">
         <Button
           variant="link"
-          color={isActive('/') ? 'yellow.300' : 'white'}
+          fontSize={isMobile ? "sm" : "lg"}
+          color={isActive("/") ? "#c8b19f" : "Black"}
           mr={4}
-          onClick={() => navigate('/')}
+          onClick={() => navigate("/")}
         >
           Home
         </Button>
         <Button
+          fontSize={isMobile ? "sm" : "lg"}
           variant="link"
-          color={isActive('/posts') ? 'yellow.300' : 'white'}
-          onClick={() => navigate('/posts')}
+          color={isActive("/posts") ? "#c8b19f" : "Black"}
+          onClick={() => navigate("/posts")}
         >
           Posts
         </Button>
+        {/* <Button p={isMobile ? 2 : 4}>Add Post</Button> */}
+        <Dialog.Root initialFocusEl={() => ref.current}>
+          <Dialog.Trigger asChild>
+            <Button p={isMobile ? 2 : 4}>Add Post</Button>
+          </Dialog.Trigger>
+          <AddPosts ref={ref} />
+        </Dialog.Root>
       </Box>
     </Flex>
   );

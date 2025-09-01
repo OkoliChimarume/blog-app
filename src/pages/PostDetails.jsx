@@ -1,9 +1,12 @@
-import React from 'react'
+import { Box } from "@chakra-ui/react";
+import React from "react";
 
 export default function PostDetails() {
   return (
-    <div>
-        <h1>PostDetails</h1>
-    </div>
-  )
+    <Box>
+      <Heading size="4xl" cursor="pointer" onClick={() => navigate("/")}>
+        PostDetails
+      </Heading>
+    </Box>
+  );
 }

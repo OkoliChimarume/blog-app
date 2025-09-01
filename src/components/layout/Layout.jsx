@@ -9,7 +9,7 @@ export default function Layout() {
     <Flex gap="2" direction="column" minHeight="100vh">
       <Navbar />
       <Box flex="1" as="main">
-        <Container maxW="6xl" p={8}>
+        <Container maxW="6xl">
          <Outlet />
         </Container>
       </Box>
