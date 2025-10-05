@@ -1,13 +1,35 @@
-# React + Vite
+# My Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple blog web app where users can create, view, and manage posts.
 
-Currently, two official plugins are available:
+## Overview
+This is a small personal project built with **React** for the frontend and **Strapi** as the backend CMS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app allows you to:
+- Add new blog posts (with title, content, tags, author, and image)
+- View all posts in a grid layout
+- Delete posts
+- Toggle the search field by clicking the **search icon** to filter posts easily
 
-## Expanding the ESLint configuration
+## screenshots
+<img width="1512" height="858" alt="image" src="https://github.com/user-attachments/assets/9744c7a6-dbf6-403f-a344-a5605c31853c" />
+<img width="1512" height="858" alt="image" src="https://github.com/user-attachments/assets/cca51cbc-64c5-4468-b1b4-fa7cbcae4742" />
+<img width="1512" height="858" alt="image" src="https://github.com/user-attachments/assets/711a0ab7-3534-4f86-81a4-79bafba99aba" />
+<img width="1512" height="858" alt="image" src="https://github.com/user-attachments/assets/e09c55d9-1d36-4bb6-8e83-697609190eb0" />
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# blog-app
+## Setup Instructions
+Since the backend server isn’t deployed yet, you’ll need to **clone and run both projects locally** to experience the full functionality.
+
+1. Clone the frontend:
+   ```bash
+   git clone https://github.com/OkoliChimarume/blog-app.git
+   cd blog-app
+   npm install
+   npm run dev
+2. Clone the frontend:
+   ```bash
+   git clone https://github.com/OkoliChimarume/blog-app-be.git
+   cd blog-app-be
+   npm install
+   npm run dev
+
